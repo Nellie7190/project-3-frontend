@@ -8,7 +8,7 @@ const About = (props) => {
     //function to make api call
     const getAboutData = async () => {
         //make api call and get response
-        const response = await fetch(props.URL + 'about-me');
+        const response = await fetch(props.URL + 'about');
         //turn response into JS object
         const data = await response.json();
         //set the about state to data

@@ -9,17 +9,19 @@ import Home from "../pages/Home";
 const Main = (props) => {
     const [words, setWords] = useState(null);
 
-    const URL = "https://dashboard.heroku.com/apps/project-3-backend-libs";
+    const URL = "https://project-3-backend-libs.herokuapp.com/";
+
 
     const getWords = async () => {
-        const response = await fetch(URL);
+        const response = await fetch(`${URL}story`);
         const data = await response.json();
         setWords(data);
+        console.log(data)
     };
 
     const createWords = async (word) => {
         // make post request to create words
-        await fetch(URL, {
+        await fetch(`${URL}story`, {
             method: "POST",
             headers: {
                 "Content-Type": "Application/json",
@@ -30,18 +32,18 @@ const Main = (props) => {
         getWords();
     };
 
-    const deleteWords = async (word) => {
-        // make post request to delete words
-        await fetch(URL, {
-            method: "DELETE",
-            headers: {
-                "Content-Type": "Application/json",
-            },
-            body: JSON.stringify(word),
-        });
-        // update list of words
-        getWords();
-    };
+    // const deleteWords = async (word) => {
+    //     // make post request to delete words
+    //     await fetch(URL, {
+    //         method: "DELETE",
+    //         headers: {
+    //             "Content-Type": "Application/json",
+    //         },
+    //         body: JSON.stringify(word),
+    //     });
+    //     // update list of words
+    //     getWords();
+    // };
 
 
     //[] <-- can write something in it you want to page to run if it changes, leave empty if you only want to run once
@@ -54,7 +56,7 @@ const Main = (props) => {
                     <Home />
                 </Route>
                 <Route path="/about">
-                    <About />
+                    <About URL={URL} />
                 </Route>
                 <Route path="/story">
                     <Story words={words} createWords={createWords} />
@@ -63,8 +65,8 @@ const Main = (props) => {
                     path="/story/:id"
                     render={(rp) => (
                         <Option1
-                            words={words}
-                            deleteWords={deleteWords}
+                            /*words={words}
+                            deleteWords={deleteWords}*/
                             {...rp}
                         />
                     )}
@@ -73,8 +75,8 @@ const Main = (props) => {
                     path="/story/:id"
                     render={(rp) => (
                         <Option2
-                            words={words}
-                            deleteWords={deleteWords}
+                            /*words={words}
+                            deleteWords={deleteWords}*/
                             {...rp}
                         />
                     )}
