@@ -1,13 +1,18 @@
 import './App.css';
 import Header from './components/Header';
-import Main from './components/Main';
 import Footer from './components/Footer';
+import Home from './pages/Home';
+import Main from './components/Main';
+import { Route, Switch } from "react-router-dom";
+
 
 function App() {
   return (
     <div className="App">
       <Header />
-      <Main />
+      <Switch>
+        <Route path="/" exact render={()=> <Home />} />
+      </Switch>
       <Footer />
     </div>
   );

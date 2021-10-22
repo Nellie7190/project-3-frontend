@@ -15,12 +15,12 @@ const Header = (props) => {
   return (
     <header>
       <nav style={navStyle}>
-        <Link to="/story">
+        <Link to="/">
           <div>HOME</div>
         </Link>
-        {/* <Link to="/about">
+        <Link to="/about">
           <div>ABOUT</div>
-        </Link> */}
+        </Link>
       </nav>
     </header>
   );
