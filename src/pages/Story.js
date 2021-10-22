@@ -97,7 +97,7 @@ const Story = (props) => {
 //     return (
 //         <div>
 //             <h1>This is my Story Page!!!!!!</h1>
-//             <StoryForm />
+//             <StoryForm words={words} createWords={createWords}/>
 //             <Button />
 //         </div>
 //     );

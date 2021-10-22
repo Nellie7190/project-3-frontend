@@ -62,7 +62,7 @@ const Main = (props) => {
                     <Story words={words} createWords={createWords} />
                 </Route>
                 <Route
-                    path="/story/:id"
+                    path="/story/option1"
                     render={(rp) => (
                         <Option1
                             /*words={words}
@@ -72,7 +72,7 @@ const Main = (props) => {
                     )}
                 />
                 <Route
-                    path="/story/:id"
+                    path="/story/option2"
                     render={(rp) => (
                         <Option2
                             /*words={words}
