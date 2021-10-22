@@ -5,78 +5,77 @@ import Option1 from "../pages/Option1";
 import Option2 from "../pages/Option2";
 
 const Main = (props) => {
-    // const [ words, setWords ] = useState(null);
+    const [ words, setWords ] = useState(null);
 
-    // const URL = "https://express-react-cheese-build1.herokuapp.com/";
+    const URL = "https://express-react-cheese-build1.herokuapp.com/";
   
-    // const getWords = async () => {
-    //   const response = await fetch(URL);
-    //   const data = await response.json();
-    //   setWords(data);
-    // };
+    const getWords = async () => {
+      const response = await fetch(URL);
+      const data = await response.json();
+      setWords(data);
+    };
   
-    // const createWords = async (person) => {
-    //   // make post request to create words
-    //   await fetch(URL, {
-    //     method: "POST",
-    //     headers: {
-    //       "Content-Type": "Application/json",
-    //     },
-    //     body: JSON.stringify(person),
-    //   });
-    //   // update list of words
-    //   getWords();
-    // };
+    const createWords = async (word) => {
+      // make post request to create words
+      await fetch(URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "Application/json",
+        },
+        body: JSON.stringify(word),
+      });
+      // update list of words
+      getWords();
+    };
     
-    // const deleteWords = async (person) => {
-    //   // make post request to delete words
-    //   await fetch(URL, {
-    //     method: "POST",
-    //     headers: {
-    //       "Content-Type": "Application/json",
-    //     },
-    //     body: JSON.stringify(person),
-    //   });
-    //   // update list of words
-    //   getWords();
-    // };
+    const deleteWords = async (word) => {
+      // make post request to delete words
+      await fetch(URL, {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "Application/json",
+        },
+        body: JSON.stringify(word),
+      });
+      // update list of words
+      getWords();
+    };
 
   
     //[] <-- can write something in it you want to page to run if it changes, leave empty if you only want to run once
-    // useEffect(() => getWords(), []);
+    useEffect(() => getWords(), []);
   
     return (
-        <h1>This is my Main route</h1>
-        // <main>
-        //     <Switch>
-        //         {/* <Route exact path="/">
-        //   <Home/>
-        // </Route> */}
-        //         <Route path="/story">
-        //             <Story words={words}/>
-        //         </Route>
-        //         <Route
-        //             path="/story/:id"
-        //             render={(rp) => (
-        //                 <Option1
-        //                 words={words}
-        //                 deleteWords={deleteWords}
-        //                     {...rp}
-        //                 />
-        //             )}
-        //         />
-        //         <Route
-        //             path="/story/:id"
-        //             render={(rp) => (
-        //                 <Option2
-        //                 words={words}
-        //                 deleteWords={deleteWords}
-        //                     {...rp}
-        //                 />
-        //             )}
-        //         />
-        //     </Switch>
-        // </main>
+        <main>
+            <Switch>
+                {/* <Route exact path="/">
+          <Home/>
+        </Route> */}
+                <Route path="/story">
+                    <Story words={words} createWords={createWords}/>
+                </Route>
+                <Route
+                    path="/story/:id"
+                    render={(rp) => (
+                        <Option1
+                        words={words}
+                        deleteWords={deleteWords}
+                            {...rp}
+                        />
+                    )}
+                />
+                <Route
+                    path="/story/:id"
+                    render={(rp) => (
+                        <Option2
+                        words={words}
+                        deleteWords={deleteWords}
+                            {...rp}
+                        />
+                    )}
+                />
+            </Switch>
+        </main>
     );
 };
 
