@@ -3,7 +3,7 @@
 const Option2 = () => {
     return (
         <div>
-            <h1>This is my Option 2 Page</h1>
+            <h1>Option 2: You Died!</h1>
         </div>
     );
 };

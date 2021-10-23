@@ -1,11 +1,12 @@
+import { Link } from 'react-router-dom';
 
-
-const OptChosenForm = () => {
+const Buttons = () => {
     return (
         <div>
-            <h1>This is my OptChosenForm Page</h1>
+            <Link to='/option1'><button>ChooseOption 1</button></Link>
+            <Link to='/option2'><button>ChooseOption 2</button></Link>
         </div>
     );
 };
 
-export default OptChosenForm;
+export default Buttons;

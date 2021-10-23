@@ -11,7 +11,6 @@ const Main = (props) => {
 
     const URL = "https://project-3-backend-libs.herokuapp.com/";
 
-
     const getWords = async () => {
         const response = await fetch(`${URL}story`);
         const data = await response.json();
@@ -32,18 +31,18 @@ const Main = (props) => {
         getWords();
     };
 
-    // const deleteWords = async (word) => {
-    //     // make post request to delete words
-    //     await fetch(URL, {
-    //         method: "DELETE",
-    //         headers: {
-    //             "Content-Type": "Application/json",
-    //         },
-    //         body: JSON.stringify(word),
-    //     });
-    //     // update list of words
-    //     getWords();
-    // };
+    const deleteWords = async (word) => {
+        // make post request to delete words
+        await fetch(`${URL}story`, {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "Application/json",
+            },
+            body: JSON.stringify(word),
+        });
+        // update list of words
+        getWords();
+    };
 
 
     //[] <-- can write something in it you want to page to run if it changes, leave empty if you only want to run once
@@ -59,10 +58,10 @@ const Main = (props) => {
                     <About URL={URL} />
                 </Route>
                 <Route path="/story">
-                    <Story words={words} createWords={createWords} />
+                    <Story URL={URL} words={words} createWords={createWords} deleteWords={deleteWords}/>
                 </Route>
                 <Route
-                    path="/story/option1"
+                    path="/option1"
                     render={(rp) => (
                         <Option1
                             /*words={words}
@@ -72,7 +71,7 @@ const Main = (props) => {
                     )}
                 />
                 <Route
-                    path="/story/option2"
+                    path="/option2"
                     render={(rp) => (
                         <Option2
                             /*words={words}
