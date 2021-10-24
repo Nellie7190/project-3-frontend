@@ -51,31 +51,38 @@ const Main = (props) => {
     return (
         <main>
             <Switch>
-                <Route exact path="/">
-                    <Home />
-                </Route>
+                <Route
+                    exact path="/"
+                    render={(rp) => (
+                        <Home
+                            words={words}
+                            deleteWords={deleteWords}
+                            {...rp}
+                        />
+                    )}
+                />
                 <Route path="/about">
                     <About URL={URL} />
                 </Route>
-                <Route path="/story">
-                    <Story URL={URL} words={words} createWords={createWords} deleteWords={deleteWords}/>
+                <Route exact path="/story">
+                    <Story URL={URL} words={words} createWords={createWords} deleteWords={deleteWords} />
                 </Route>
                 <Route
-                    path="/option1"
+                    path="/story/option1"
                     render={(rp) => (
                         <Option1
-                            /*words={words}
-                            deleteWords={deleteWords}*/
+                            words={words}
+                            deleteWords={deleteWords}
                             {...rp}
                         />
                     )}
                 />
                 <Route
-                    path="/option2"
+                    path="/story/option2"
                     render={(rp) => (
                         <Option2
-                            /*words={words}
-                            deleteWords={deleteWords}*/
+                            words={words}
+                            deleteWords={deleteWords}
                             {...rp}
                         />
                     )}

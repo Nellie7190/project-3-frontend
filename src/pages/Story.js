@@ -15,8 +15,6 @@ const Story = (props) => {
     //handleChange function for form
     const handleChange = (event) => {
         setStoryData({ ...storyData, [event.target.name]: event.target.value });
-        console.log("this is", event)
-
     };
 
 
@@ -96,7 +94,7 @@ const Story = (props) => {
         return (
             <div>
                 {props.words ? loaded() : <h1>Loading...</h1>}
-                <Buttons />
+                <Buttons props={props} handleDeleteStory={handleDeleteStory}/>
             </div>
         )
     }
