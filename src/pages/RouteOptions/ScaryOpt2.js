@@ -1,7 +1,7 @@
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 import { useState } from 'react';
 
-const Home = (props) => {
+const ScaryOpt2 = (props) => {
     //state to hold storyData
     const [storyData, setStoryData] = useState({
         noun: "",
@@ -18,11 +18,11 @@ const Home = (props) => {
         }
     };
     return (
-        <div>
-            <h1>Welcome to Code-Libs!!! Press ENTER if you would like to see your fate</h1>
-            <Link to="/themes"> <button onClick={handleDeleteStory}>ENTER</button> </Link>
+        <div className='main-content'>
+            <h1>Scary Option 2: You Died!</h1>
+            <Link to='/themes'><button onClick={handleDeleteStory}>Back to themes</button></Link>
         </div>
     );
 };
 
-export default Home;
+export default ScaryOpt2;

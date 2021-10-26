@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-const Buttons = (props) => {
+const CodeButtons = (props) => {
     
     return (
         <div>
@@ -13,4 +13,4 @@ const Buttons = (props) => {
     );
 };
 
-export default Buttons;
+export default CodeButtons;

@@ -1,11 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { Route, Switch } from "react-router-dom";
-import Story from "../pages/Story";
-import Option1 from "../pages/Option1";
-import Option2 from "../pages/Option2";
+import Story from "../pages/Themes/Story";
+import Option1 from "../pages/RouteOptions/Option1";
+import Option2 from "../pages/RouteOptions/Option2";
+import FTOpt1 from '../pages/RouteOptions/FTOpt1.js';
+import FTOpt2 from '../pages/RouteOptions/FTOpt2';
+import ScaryOpt1 from "../pages/RouteOptions/ScaryOpt1";
+import ScaryOpt2 from '../pages/RouteOptions/ScaryOpt2';
 import About from "../pages/About";
 import Home from "../pages/Home";
 import Themes from "../pages/Themes";
+import Fairytale from "../pages/Themes/Fairytale";
+import Scary from "../pages/Themes/Scary";
 
 const Main = (props) => {
     const [words, setWords] = useState(null);
@@ -18,6 +24,22 @@ const Main = (props) => {
         setWords(data);
     };
 
+    ///////// ADDED ATTEMPT
+    const getFairyTaleWords = async () => {
+
+        const response = await fetch(`${URL}fairytale`);
+        const fairyTaleData = await response.json();
+        setWords(fairyTaleData);
+    }
+
+    const getScaryWords = async () => {
+
+        const response = await fetch(`${URL}scary`);
+        const scaryData = await response.json();
+        setWords(scaryData);
+    }
+////////////////////
+
     const createWords = async (word) => {
         // make post request to create words
         await fetch(`${URL}story`, {
@@ -27,9 +49,40 @@ const Main = (props) => {
             },
             body: JSON.stringify(word),
         });
+        /////////// ADDED ATTEMPT
+        await fetch(`${URL}fairytale`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "Application/json",
+            },
+            body: JSON.stringify(word),
+        });
+        
+        await fetch(`${URL}scary`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "Application/json",
+            },
+            body: JSON.stringify(word),
+        });
+
         // update list of words
         getWords();
+        getScaryWords();
+        getFairyTaleWords();
     };
+    
+    // const createFairyTaleWords = async (word) => {
+    //     await fetch(`${URL}fairytale`, {
+    //         method: "POST",
+    //         headers: {
+    //             "Content-Type": "Application/json",
+    //         },
+    //         body: JSON.stringify(word),
+    //     });
+    //     //update list of fairytale words
+    //     getFairyTaleWords();
+    // }
 
     const deleteWords = async (word) => {
         // make post request to delete words
@@ -40,8 +93,27 @@ const Main = (props) => {
             },
             body: JSON.stringify(word),
         });
+
+        //////////// ADDED ATTEMPT
+        await fetch(`${URL}fairytale`, {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "Application/json",
+            },
+            body: JSON.stringify(word),
+        });
+
+        await fetch(`${URL}scary`, {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "Application/json",
+            },
+            body: JSON.stringify(word),
+        });
         // update list of words
         getWords();
+        getFairyTaleWords();
+        getScaryWords();
     };
 
 
@@ -64,17 +136,17 @@ const Main = (props) => {
                 <Route path="/about">
                     <About URL={URL} />
                 </Route>
-                <Route path="/theme">
+                <Route path="/themes">
                     <Themes URL={URL} />
                 </Route>
                 <Route exact path="/story">
                     <Story URL={URL} words={words} createWords={createWords} deleteWords={deleteWords} />
                 </Route>
                 <Route exact path="/fairytale">
-                    <Story URL={URL} words={words} createWords={createWords} deleteWords={deleteWords} />
+                    <Fairytale URL={URL} words={words} createWords={createWords} deleteWords={deleteWords} />
                 </Route>
                 <Route exact path="/scary">
-                    <Story URL={URL} words={words} createWords={createWords} deleteWords={deleteWords} />
+                    <Scary URL={URL} words={words} createWords={createWords} deleteWords={deleteWords} />
                 </Route>
                 <Route
                     path="/story/option1"
@@ -89,7 +161,7 @@ const Main = (props) => {
                 <Route
                     path="/fairytale/option1"
                     render={(rp) => (
-                        <Option1
+                        <FTOpt1
                             words={words}
                             deleteWords={deleteWords}
                             {...rp}
@@ -99,7 +171,7 @@ const Main = (props) => {
                 <Route
                     path="/scary/option1"
                     render={(rp) => (
-                        <Option1
+                        <ScaryOpt1
                             words={words}
                             deleteWords={deleteWords}
                             {...rp}
@@ -119,7 +191,7 @@ const Main = (props) => {
                 <Route
                     path="/fairytale/option2"
                     render={(rp) => (
-                        <Option2
+                        <FTOpt2
                             words={words}
                             deleteWords={deleteWords}
                             {...rp}
@@ -129,7 +201,7 @@ const Main = (props) => {
                 <Route
                     path="/scary/option2"
                     render={(rp) => (
-                        <Option2
+                        <ScaryOpt2
                             words={words}
                             deleteWords={deleteWords}
                             {...rp}

@@ -1,16 +1,34 @@
+import { Link } from 'react-router-dom';
+import { useState } from 'react';
 
-const Option1 = () => {
+const Option1 = (props) => {
+     //state to hold storyData
+     const [storyData, setStoryData] = useState({
+        noun: "",
+        verb: "",
+        adjective: "",
+        number: "",
+        created: false
+    });
+
+    // we need this to delete a story
+    const handleDeleteStory = async => {
+        if (storyData.created === false) {
+            props.deleteWords(storyData);
+        }
+    };
     
     return (
         <div className='main-content'>
-            <h1>Option 1: you Lived!</h1>
+            <h1>Code Option 1: you Lived!</h1>
+            <Link to='/themes'><button onClick={handleDeleteStory}>Back to themes</button></Link>
         </div>
     );
 };
 
 export default Option1;
 
-
+//ATTEMPT MODAL POPUP
 // const Option1 = () => {
 //     const BUTTON_WRAPPER_STYLES = {
 //         position: 'relative',

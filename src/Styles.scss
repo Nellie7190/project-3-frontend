@@ -30,13 +30,14 @@ main {
     height: 50%;
     top: 25%;
     left: 25%;
+    padding: 10px;
     position: absolute;
     text-align: center;
     //only needed if im keeping different color
     align-items: center;
     // justify-content: center;
     display: flex;
-    contain: content;
+    // contain: content;
 }
 
 .input {

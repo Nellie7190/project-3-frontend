@@ -1,9 +1,9 @@
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 import { useState } from 'react';
 
-const Home = (props) => {
-    //state to hold storyData
-    const [storyData, setStoryData] = useState({
+const FTOpt1 = (props) => {
+     //state to hold storyData
+     const [storyData, setStoryData] = useState({
         noun: "",
         verb: "",
         adjective: "",
@@ -17,12 +17,13 @@ const Home = (props) => {
             props.deleteWords(storyData);
         }
     };
+    
     return (
-        <div>
-            <h1>Welcome to Code-Libs!!! Press ENTER if you would like to see your fate</h1>
-            <Link to="/themes"> <button onClick={handleDeleteStory}>ENTER</button> </Link>
+        <div className='main-content'>
+            <h1>FTOption 1: you Lived!</h1>
+            <Link to='/themes'><button onClick={handleDeleteStory}>Back to themes</button></Link>
         </div>
     );
 };
 
-export default Home;
+export default FTOpt1;
