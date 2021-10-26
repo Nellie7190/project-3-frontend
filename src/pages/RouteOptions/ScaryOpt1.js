@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 
-const Option2 = (props) => {
-    //state to hold storyData
-    const [storyData, setStoryData] = useState({
+const ScaryOpt1 = (props) => {
+     //state to hold storyData
+     const [storyData, setStoryData] = useState({
         noun: "",
         verb: "",
         adjective: "",
@@ -17,12 +17,16 @@ const Option2 = (props) => {
             props.deleteWords(storyData);
         }
     };
+    
     return (
         <div className='main-content'>
-            <h1>Code Option 2: You Died!</h1>
+            <h1>🚪</h1>
+            <br />
+            <h1>You chose Door #1: You Lived!⭐️</h1>
+            <br />
             <Link to='/themes'><button onClick={handleDeleteStory}>Back to themes</button></Link>
         </div>
     );
 };
 
-export default Option2;
+export default ScaryOpt1;

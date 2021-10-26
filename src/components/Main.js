@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Route, Switch } from "react-router-dom";
 import Story from "../pages/Themes/Story";
-import Option1 from "../pages/RouteOptions/Option1";
-import Option2 from "../pages/RouteOptions/Option2";
+import CodeOpt1 from '../pages/RouteOptions/CodeOpt1'
+import CodeOpt2 from '../pages/RouteOptions/CodeOpt2'
 import FTOpt1 from '../pages/RouteOptions/FTOpt1.js';
 import FTOpt2 from '../pages/RouteOptions/FTOpt2';
 import ScaryOpt1 from "../pages/RouteOptions/ScaryOpt1";
@@ -151,7 +151,7 @@ const Main = (props) => {
                 <Route
                     path="/story/option1"
                     render={(rp) => (
-                        <Option1
+                        <CodeOpt1
                             words={words}
                             deleteWords={deleteWords}
                             {...rp}
@@ -181,7 +181,7 @@ const Main = (props) => {
                 <Route
                     path="/story/option2"
                     render={(rp) => (
-                        <Option2
+                        <CodeOpt2
                             words={words}
                             deleteWords={deleteWords}
                             {...rp}

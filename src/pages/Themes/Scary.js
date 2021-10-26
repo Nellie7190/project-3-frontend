@@ -41,12 +41,14 @@ const Scary = (props) => {
     const loaded = () => {
         return props.words.map((word) => (
             <div key={word._id}>
-                <p>Scary Route</p>
-                <h1>{word.name}</h1>
-                <h1>{word.noun}</h1>
-                <h1>{word.verb}</h1>
-                <h1>{word.adjective}</h1>
-                <h1>{word.number}</h1>
+                <p>
+                    One dark and stormy night, there was a young boy named <span className='input'>{word.name}</span> who sat all alone in his <span className='input'>{word.adjective}</span> bedroom. Suddenly <span className='input'>{word.name}</span> heard <span className='input'>{word.number}</span> loud thumps and decided to <span className='input'>{word.verb}</span> under his blanket. When <span className='input'>{word.name}</span> decided to take a peek, 2 eerie looking doors stood shut at the end of the bed. Which door should <span className='input'>{word.name}</span> choose?
+                </p>
+                {/* <span className='input'>{word.name}</span>
+                <span className='input'>{word.noun}</span>
+                <span className='input'>{word.verb}</span>
+                <span className='input'>{word.adjective}</span>
+                <span className='input'>{word.number}</span> */}
             </div>
         ))
     }

@@ -20,7 +20,7 @@ const FTOpt1 = (props) => {
     
     return (
         <div className='main-content'>
-            <h1>FTOption 1: you Lived!</h1>
+            <h1>You choose to meet the Prince: They fall in love and live Happily Ever After!👑</h1>
             <Link to='/themes'><button onClick={handleDeleteStory}>Back to themes</button></Link>
         </div>
     );

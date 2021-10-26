@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Link } from 'react-router-dom';
 import FTButtons from "../../components/Buttons/FTButtons";
 
 const Fairytale = (props) => {
@@ -40,12 +39,15 @@ const Fairytale = (props) => {
     const loaded = () => {
         return props.words.map((word) => (
             <div key={word._id}>
-                <p>Fairytale Route</p>
-                <h1>{word.name}</h1>
+                <p>
+                    Once upon a time, there was a very <span className='input'>{word.adjective}</span> Princess named <span className='input'>{word.name}</span>. One day, she saw the King <span className='input'>{word.verb}</span> down from his thrown, and says to <span className='input'>{word.name}</span> that a prince has come to meet her and that she was <span className='input'>{word.number}</span> minutes to decide if she would like to meet him. Which route should <span className='input'>{word.name}</span> choose?
+                </p>
+                {/* <p>Fairytale Route</p>
+                <span className='input'>{word.name}</span>
                 <h1>{word.noun}</h1>
                 <h1>{word.verb}</h1>
                 <h1>{word.adjective}</h1>
-                <h1>{word.number}</h1>
+                <h1>{word.number}</h1> */}
             </div>
         ))
     }

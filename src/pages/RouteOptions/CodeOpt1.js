@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 
-const Option1 = (props) => {
+const CodeOpt1 = (props) => {
      //state to hold storyData
      const [storyData, setStoryData] = useState({
         noun: "",
@@ -20,13 +20,13 @@ const Option1 = (props) => {
     
     return (
         <div className='main-content'>
-            <h1>Code Option 1: you Lived!</h1>
+            <h1>Blue Pill was the right option: You Lived!⭐️</h1>
             <Link to='/themes'><button onClick={handleDeleteStory}>Back to themes</button></Link>
         </div>
     );
 };
 
-export default Option1;
+export default CodeOpt1;
 
 //ATTEMPT MODAL POPUP
 // const Option1 = () => {

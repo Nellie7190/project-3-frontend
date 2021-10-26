@@ -19,7 +19,10 @@ const ScaryOpt2 = (props) => {
     };
     return (
         <div className='main-content'>
-            <h1>Scary Option 2: You Died!</h1>
+            <h1>🚪</h1>
+            <br />
+            <h1>You chose Door #2: You Died!💀</h1>
+            <br />
             <Link to='/themes'><button onClick={handleDeleteStory}>Back to themes</button></Link>
         </div>
     );

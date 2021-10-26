@@ -19,7 +19,7 @@ const FTOpt2 = (props) => {
     };
     return (
         <div className='main-content'>
-            <h1>FT Option 2: You Died!</h1>
+            <h1>You chose not to meet the Prince: You get old, and haggard, and nobody wants you. You Died! 💀</h1>
             <Link to='/themes'><button onClick={handleDeleteStory}>Back to themes</button></Link>
         </div>
     );
