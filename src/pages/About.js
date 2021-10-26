@@ -22,8 +22,8 @@ const About = (props) => {
     const loaded = () => {
         return (
         <div>
-            <h2>{about.name}</h2>
-            <h3>{about.email}</h3>
+            <h2>{about.name}</h2><br />
+            <h3>{about.email}</h3><br />
             <p>{about.bio}</p>
             <button><Link to='/story'>Back to Main</Link></button>
         </div>

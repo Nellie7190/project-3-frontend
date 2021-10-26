@@ -58,6 +58,17 @@ main {
     background-color: rgb(30, 181, 192);
 }
 
+nav {
+        display: flex;
+        justify-content: space-around;
+        border: 3px solid black;
+        padding: 10px;
+        width: 100%;
+        // margin: "auto",
+        background-color: "rgb(30, 181, 192)"
+      
+}
+
 #Footer {
     position: fixed;
     bottom: 0;

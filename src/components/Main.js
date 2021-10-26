@@ -5,6 +5,7 @@ import Option1 from "../pages/Option1";
 import Option2 from "../pages/Option2";
 import About from "../pages/About";
 import Home from "../pages/Home";
+import Themes from "../pages/Themes";
 
 const Main = (props) => {
     const [words, setWords] = useState(null);
@@ -63,7 +64,16 @@ const Main = (props) => {
                 <Route path="/about">
                     <About URL={URL} />
                 </Route>
+                <Route path="/theme">
+                    <Themes URL={URL} />
+                </Route>
                 <Route exact path="/story">
+                    <Story URL={URL} words={words} createWords={createWords} deleteWords={deleteWords} />
+                </Route>
+                <Route exact path="/fairytale">
+                    <Story URL={URL} words={words} createWords={createWords} deleteWords={deleteWords} />
+                </Route>
+                <Route exact path="/scary">
                     <Story URL={URL} words={words} createWords={createWords} deleteWords={deleteWords} />
                 </Route>
                 <Route
@@ -77,7 +87,47 @@ const Main = (props) => {
                     )}
                 />
                 <Route
+                    path="/fairytale/option1"
+                    render={(rp) => (
+                        <Option1
+                            words={words}
+                            deleteWords={deleteWords}
+                            {...rp}
+                        />
+                    )}
+                />
+                <Route
+                    path="/scary/option1"
+                    render={(rp) => (
+                        <Option1
+                            words={words}
+                            deleteWords={deleteWords}
+                            {...rp}
+                        />
+                    )}
+                />
+                <Route
                     path="/story/option2"
+                    render={(rp) => (
+                        <Option2
+                            words={words}
+                            deleteWords={deleteWords}
+                            {...rp}
+                        />
+                    )}
+                />
+                <Route
+                    path="/fairytale/option2"
+                    render={(rp) => (
+                        <Option2
+                            words={words}
+                            deleteWords={deleteWords}
+                            {...rp}
+                        />
+                    )}
+                />
+                <Route
+                    path="/scary/option2"
                     render={(rp) => (
                         <Option2
                             words={words}

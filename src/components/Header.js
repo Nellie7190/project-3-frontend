@@ -1,23 +1,13 @@
 import { Link } from 'react-router-dom';
 
 const Header = (props) => {
-    //inline style for the nav tag
-  const navStyle = {
-    display: "flex",
-    justifyContent: "space-around",
-    border: "3px solid black",
-    padding: "10px",
-    width: "100%",
-    // margin: "auto",
-    backgroundColor: "rgb(30, 181, 192)"
-  };
-
   return (
     <header>
-      <nav style={navStyle}>
+      <nav>
         <Link to="/">
           <div>HOME</div>
         </Link>
+        <h4>Code-Libs</h4>
         <Link to="/about">
           <div>ABOUT</div>
         </Link>
