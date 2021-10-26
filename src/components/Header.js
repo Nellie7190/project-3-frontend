@@ -8,8 +8,8 @@ const Header = (props) => {
     border: "3px solid black",
     padding: "10px",
     width: "100%",
-    margin: "auto",
-    backgroundColor: "teal"
+    // margin: "auto",
+    backgroundColor: "rgb(30, 181, 192)"
   };
 
   return (

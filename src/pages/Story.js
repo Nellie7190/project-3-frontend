@@ -40,11 +40,12 @@ const Story = (props) => {
     const loaded = () => {
         return props.words.map((word) => (
             <div key={word._id}>
-                <h1>{word.noun}</h1>
+                <p>This is the story of a <span class='input'>{word.noun}</span> who decided to try learning Java Script. Little did the <span class='input'>{word.noun}</span> know, things became <span class='input'>{word.adjective}</span> very fast. The <span class='input'>{word.noun}</span> decided to <span class='input'>{word.verb}</span> for <span class='input'>{word.number}</span> minutes. When returning, the <span class='input'>{word.noun}</span> realized she missed something in the code. Which route should she take?</p>
+                {/* <h1>{word.noun}</h1>
                 <h1>{word.verb}</h1>
                 <h1>{word.adjective}</h1>
-                <h1>{word.number}</h1>
-                <Link to='/'><button onClick={handleDeleteStory}>Start Over</button></Link>
+                <h1>{word.number}</h1> */}
+                {/* <Link to='/'><button class='Buttons' onClick={handleDeleteStory}>Start Over</button></Link> */}
             </div>
         ))
     }
@@ -92,7 +93,7 @@ const Story = (props) => {
     } else {
 
         return (
-            <div>
+            <div className='main-content'>
                 {props.words ? loaded() : <h1>Loading...</h1>}
                 <Buttons props={props} handleDeleteStory={handleDeleteStory}/>
             </div>

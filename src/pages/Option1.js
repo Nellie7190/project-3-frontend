@@ -2,7 +2,7 @@
 const Option1 = () => {
     
     return (
-        <div>
+        <div className='main-content'>
             <h1>Option 1: you Lived!</h1>
         </div>
     );

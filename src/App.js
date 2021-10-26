@@ -1,9 +1,9 @@
 import './App.css';
+import './Styles.scss'
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Main from './components/Main';
-import './Styles.scss'
-import { Route, Redirect } from "react-router-dom";
+
 
 function App() {
   return (

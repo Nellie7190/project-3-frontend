@@ -7,7 +7,7 @@ const Footer = (props) => {
         padding: "10px",
         width: "100%",
         margin: "auto",
-        backgroundColor: "teal"
+        backgroundColor: "rgb(30, 181, 192)"
       };
     return (
         <>

@@ -1,14 +1,8 @@
 * {
-    background-color: black;
-    color: white;
+    // background-color: black;
+    // color: white;
     margin: 0 auto;
 }
-
-// Header{
-//     background-color: black;
-//     padding:0%;
-//     margin: 0 auto
-// }
 
 #root {
     margin: 0 auto;
@@ -18,18 +12,41 @@
     flex-direction: flex;
     flex-wrap: wrap;
     margin: 0 auto;
-    height: 100vh;
+    // height: 100vh;
 }
 
+body  {
+    text-align: center;
+    font-family: 'Fjalla One';
+    font-size: 20px;
+    background: #e6eaf0;
+  }
+
 main {
-    background-color: coral;
-    // margin: auto;
+    background: linear-gradient(to bottom right, rgb(30, 181, 192), yellow);
+    border-radius: 2px;
+    margin: 0 auto;
     width: 50%;
     height: 50%;
-    top: 50%;
+    top: 25%;
+    left: 25%;
     position: absolute;
     text-align: center;
+    //only needed if im keeping different color
+    align-items: center;
+    // justify-content: center;
+    display: flex;
+    contain: content;
 }
+
+.input {
+    background: white;
+    color: red;
+    border-bottom: 2px black solid;
+    font-family: 'Shadows Into Light';
+    padding: 0 6px;
+    margin: 4px;
+   }
 
 .HaF {
     display: "flex";
@@ -38,7 +55,7 @@ main {
     padding: "10px";
     width: "100%";
     margin: "auto";
-    background-color: "green";
+    background-color: rgb(30, 181, 192);
 }
 
 #Footer {
@@ -46,5 +63,9 @@ main {
     bottom: 0;
     left: 0;
     right: 0;
+}
+
+.Buttons {
+    padding:3px;
 }
 
