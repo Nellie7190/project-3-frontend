@@ -1,0 +1,50 @@
+* {
+    background-color: black;
+    color: white;
+    margin: 0 auto;
+}
+
+// Header{
+//     background-color: black;
+//     padding:0%;
+//     margin: 0 auto
+// }
+
+#root {
+    margin: 0 auto;
+}
+
+.App {
+    flex-direction: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    height: 100vh;
+}
+
+main {
+    background-color: coral;
+    // margin: auto;
+    width: 50%;
+    height: 50%;
+    top: 50%;
+    position: absolute;
+    text-align: center;
+}
+
+.HaF {
+    display: "flex";
+    justify-content: "space-around";
+    border: "3px solid black";
+    padding: "10px";
+    width: "100%";
+    margin: "auto";
+    background-color: "green";
+}
+
+#Footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+

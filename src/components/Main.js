@@ -15,7 +15,6 @@ const Main = (props) => {
         const response = await fetch(`${URL}story`);
         const data = await response.json();
         setWords(data);
-        console.log(data)
     };
 
     const createWords = async (word) => {
@@ -46,7 +45,7 @@ const Main = (props) => {
 
 
     //[] <-- can write something in it you want to page to run if it changes, leave empty if you only want to run once
-    useEffect(() => getWords(), []);
+    // useEffect(() => getWords(), []);
 
     return (
         <main>

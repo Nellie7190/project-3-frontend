@@ -4,10 +4,10 @@ const Footer = (props) => {
         display: "flex",
         justifyContent: "space-around",
         border: "3px solid black",
-        padding: "8px",
-        width: "90%",
+        padding: "10px",
+        width: "100%",
         margin: "auto",
-        backgroundColor: "green"
+        backgroundColor: "teal"
       };
     return (
         <>

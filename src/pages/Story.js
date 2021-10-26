@@ -99,13 +99,5 @@ const Story = (props) => {
         )
     }
 };
-//     return (
-//         <div>
-//             <h1>This is my Story Page!!!!!!</h1>
-//             <StoryForm words={words} createWords={createWords}/>
-//             <Button />
-//         </div>
-//     );
-// };
 
 export default Story;
