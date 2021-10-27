@@ -40,7 +40,7 @@ const Fairytale = (props) => {
         return props.words.map((word) => (
             <div key={word._id}>
                 <p>
-                    Once upon a time, there was a very <span className='input'>{word.adjective}</span> Princess named <span className='input'>{word.name}</span>. One day, she saw the King <span className='input'>{word.verb}</span> down from his throne, and says to <span className='input'>{word.name}</span> that a prince has come to meet her and that she was <span className='input'>{word.number}</span> minutes to decide if she would like to meet him. Which route should <span className='input'>{word.name}</span> choose?
+                    Once upon a time, there was a very <span className='input'>{word.adjective}</span> Princess named <span className='input'>{word.name}</span>. One day, she saw the King <span className='input'>{word.verb}</span> down from his throne. He says to <span className='input'>{word.name}</span> that a prince has come to meet her, and she was <span className='input'>{word.number}</span> minutes to decide if she would like to meet him. Which route should <span className='input'>{word.name}</span> choose?
                 </p>
                 {/* <p>Fairytale Route</p>
                 <span className='input'>{word.name}</span>

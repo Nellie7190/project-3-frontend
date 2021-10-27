@@ -39,7 +39,7 @@ const Story = (props) => {
     const loaded = () => {
         return props.words.map((word) => (
             <div key={word._id}>
-                <p>This is the story of a <span class='input'>{word.noun}</span> named <span class='input'>{word.name}</span> who tried learning Java Script. Little did <span class='input'>{word.name}</span> know, things became <span class='input'>{word.adjective}</span> very fast. <span class='input'>{word.name}</span> took a break to go <span class='input'>{word.verb}</span> for <span class='input'>{word.number}</span> minutes. When returning, out of nowhere Morphius shows up offering 2 <span class='input'>{word.adjective}</span> options for knowledge. Which route <span class='input'>{word.name}</span> take?</p>
+                <p>This is the story of a <span class='input'>{word.noun}</span> named <span class='input'>{word.name}</span> who tried learning Java Script. Little did <span class='input'>{word.name}</span> know, things would become <span class='input'>{word.adjective}</span> very fast. <span class='input'>{word.name}</span> took a break to go <span class='input'>{word.verb}</span> for <span class='input'>{word.number}</span> minutes. When returning, out of thin air appears Morphius offering 2 <span class='input'>{word.adjective}</span> options for knowledge. Which route <span class='input'>{word.name}</span> take?</p>
             </div>
         ))
     }
